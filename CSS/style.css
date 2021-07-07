@@ -1,0 +1,503 @@
+@charset "UTF-8";
+
+@import "./reset.css";
+@import "./about.css";
+@import "./contact.css";
+/* common */
+.main-wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* @media screen and (max-width: 768px) and (min-width: 375px) {
+  .main-wrap {
+    padding-top: 80px;
+  }
+}
+*/
+@media screen and (min-width: 768px) {
+  .main-wrap {
+    padding: 0 4vw;
+  }
+} 
+
+.section-wrap {
+  max-width: 1100px;
+  width: 100%;
+  margin: 120px auto;
+}
+
+
+.section-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.btn {
+  max-width: 160px;
+  text-align: center;
+  background-color: #000000;
+  padding: 12px 41px;
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  opacity: .6;
+  transition: .3s;
+}
+
+/* // common */
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  padding: 30px 4vw 0;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  width: 260px;
+  position: fixed;
+  top: 38px;
+  left: 4vw;
+  z-index: 1;
+}
+
+.site-logo.black {
+  fill: #333333;
+  transition: fill .3s;
+}
+
+.header-nav {
+  font-weight: bold;
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  text-align: center;
+  padding-top: 120px;
+  background-color: rgba(34, 34, 34, 0.95);
+  z-index: 2;
+  /* 隠しておくための記述 */
+  transform: translateX(100%);
+  /* 画面の外側に初期配置しておく */
+  opacity: 0;
+  /* 初期は非表示 */
+  transition: transform .3s, opacity .3s;
+  /* 変化と透明度が.3sで変化する */
+  /* // 隠しておくための記述 */
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav {
+    width: 36.1vw;
+    
+  }
+}
+
+.header-nav .header-nav_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-nav .header-nav_item:first-child {
+  margin-top: 40px;
+}
+
+.header-nav .header-nav_item:not(:first-child) {
+  margin-top: 30px;
+}
+
+/* ハンバーガーボタンが(メニューが開いていない時) */
+.burger-btn_wrap {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 38px;
+  right: 4vw;
+  z-index: 10;
+}
+
+.burger_btn {
+  z-index: 30;
+
+}
+
+.burger_btn .bar {
+  display: block;
+  background-color: #ffffff;
+  height: 2px;
+  width: 22px;
+  border-radius: 1px;
+}
+
+.burger_btn .bar_top {
+  transform: translateY(-4px);
+  /* 上に4px動かして */
+  transition: transform .3s;
+}
+
+.burger_btn .bar_bottom {
+  transform: translateY(4px);
+  /* 下に4px動かす */
+  transition: transform .3s;
+}
+
+.menu {
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* // ハンバーガーボタンが(メニューが開いていない時) */
+/* ハンバーガーボタンが開いた時(メニューが開いた時) */
+.burger_btn .bar.cross.bar_top {
+  transform: translateY(2px) rotate(30deg);
+  transition: transform .3s;
+}
+
+.burger_btn .bar.cross.bar_middle {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.burger_btn .bar.cross.bar_bottom {
+  transform: translateY(-2px) rotate(-30deg);
+  transition: transform .3s;
+}
+
+/* ハンバーガーメニューが開いた時 */
+body.no-scroll {
+  overflow: hidden;
+  /* ハンバーガーメニューが開いた時にスクロールをさせない */
+}
+
+.header-nav.open {
+  /* .header-navがクリックされ、.openがつくと、 */
+  transform: translateX(0);
+  /* translateX(100%)が0になる */
+  opacity: 1;
+  /* opacity: 0; が1になる */
+  transition: transform .3s, opacity .3s;
+  /* 動きは.3sかける */
+  z-index: 20;
+}
+
+.burger-musk {
+  /* nav-menuが開いている時に、画面全体を覆う */
+  display: none;
+  /* 最初は表示しない */
+  height: 100vh;
+  /* 縦全体 */
+  width: 100vw;
+  /* 横全体 */
+  position: fixed;
+  /* 固定 */
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 黒の透明度50% */
+  z-index: 10;
+}
+
+/* / ハンバーガーメニューが開いた時 */
+/* クリスタ スクロールした時にsite-logoの色を変えるjQuery */
+.site-logo.black svg path {
+  fill: #333;
+  transition: .3s;
+}
+
+/* // クリスタ スクロールした時にsite-titleの色を変えるjQuery */
+/* スクロールした時にメニューを黒くするための記述 */
+.burger-btn.black .menu {
+  color: #333333;
+  transition: color .3s;
+}
+
+/* // スクロールした時にメニューを黒くするための記述 */
+/* // header */
+/* first-view */
+.first-view {
+  height: 100vh;
+}
+
+.first-view::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.key-visual {
+  width: 76.5%;
+  height: 86.5%;
+  background-image: url(../IMG/top/key-visual.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.copy-wrap {
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .copy-wrap {
+    right: 40px;
+    top: 260px;
+    /* right: 0; */
+    
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .copy-wrap {
+        
+    right: 0;
+    
+  }
+}
+.copy-wrap .copy-japanese,
+.copy-wrap .copy-english {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .copy-wrap .copy-japanese,
+  .copy-wrap .copy-english {
+    font-size: 2rem;
+  }
+}
+
+.copy-wrap .copy-main {
+  font-size: 7.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .copy-wrap .copy-main {
+    font-size: 5.6rem;
+  }
+}
+
+/* // first-view */
+/* about us */
+.about-background {
+  background-image: url(../IMG/about/first-view.png);
+  background-position: center;
+  background-size: cover;
+  padding: 50px 4vw;
+  margin: 0 auto;
+}
+
+.about-text_wrap {
+  background: #ffffff;
+  max-width: 590px;
+  padding: 50px 30px;
+}
+
+.about-text_wrap .about-text {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  line-height: 2;
+  max-width: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-text_wrap .about-text {
+    max-width: 530px;
+  }
+}
+
+/* about us */
+
+@media screen and (min-width: 768px) {
+  .grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* works */
+.works-wrap {
+  padding: 40px 4vw;
+}
+
+.works-wrap .works-img_wrap {
+  max-width: 345px;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .works-wrap .works-img_wrap {
+    max-width: 520px;
+  }
+}
+
+.works-wrap .works-text {
+  font-size: 1.6rem;
+  margin-top: 30px;
+}
+
+/* // works */
+/* culture */
+.culture-wrap {
+  padding: 40px 4vw;
+}
+
+.culture-wrap .culture-img_wrap {
+  max-width: 345px;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .culture-wrap .culture-img_wrap {
+    max-width: 520px;
+  }
+}
+
+.culture-wrap .culture-text {
+  font-size: 1.6rem;
+  margin-top: 30px;
+}
+
+/* // culture */
+/* latest topics */
+.topics-wrap {
+  padding: 40px 4vw;
+}
+
+.topics-items {
+  max-width: 345px;
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .topics-items {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .topics-items {
+    max-width: 700px;
+  }
+}
+
+.topics-item {
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 10px;
+}
+
+.topics-item:not(:first-child) {
+  margin-top: 22px;
+}
+
+.topics-item .topics-date {
+  color: #CECECE;
+  font-size: 1rem;
+}
+
+.topics-item .link-title {
+  margin-top: 11px;
+  font-size: 1.2rem;
+}
+
+.topics-item .link {
+  color: #000000;
+}
+
+/* // latest topics */
+/* contact */
+.contact-wrap {
+  background-color: #F2F2F2;
+  padding: 40px 4vw;
+  max-width: 1400px;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+.contact-img_wrap {
+  max-width: 345px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .contact-img_wrap {
+    max-width: 520px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-img_wrap {
+    max-width: 580px;
+  }
+}
+
+.contact-heading {
+  margin-top: 30px;
+}
+
+.contact-text {
+  margin-top: 30px;
+  max-width: 345px;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .contact-text {
+    max-width: 510px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-text {
+    max-width: 440px;
+  }
+}
+
+/* // contact */
+/* footer */
+.footer {
+  background-color: #525252;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+/* // footer */

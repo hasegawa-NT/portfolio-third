@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/* first-view */
+.about-first-view {
+  height: 60vh;
+  min-height: 450px;
+}
+
+.about-first-view::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  width: 50%;
+  height: 60vh;
+  min-width: 450px;
+  z-index: -1;
+}
+
+.about-key-visual {
+  height: 86%;
+  width: 76.4%;
+  background-image: url(../IMG/about/first-view.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.about-page_title {
+  font-size: 5.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .about-page_title {
+    font-size: 7.2rem;
+  }
+}
+
+.about-page-japanese {
+  font-size: 1.6rem;
+  display: block;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .about-page-japanese {
+    font-size: 2rem;
+  }
+}
+
+/* // first-view */
+/* vision */
+.vision-wrap {
+  padding-right: 4vw;
+  padding-left: 4vw;
+  margin-top: 80px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .vision-wrap {
+    /* paddingがわからない */
+    padding-left: 13vw;
+    padding-right: 40vw;
+  }
+}
+
+.vision-lead {
+  margin-top: 37px;
+  font-size: 2.4rem;
+}
+
+.vision-text_wrap {
+  margin-top: 35px;
+}
+
+@media screen and (min-width: 768px) {
+  .vision-text_wrap {
+    max-width: 415px;
+  }
+}
+
+.vision-text {
+  font-size: 1.4rem;
+  margin-top: 30px;
+}
+
+/* // vision */
+/* ceo message */
+.message-img_wrap {
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .message-img_wrap {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .message-img_wrap {
+    width: 36.4%;
+    max-width: 320px;
+  }
+}
+
+.massage-content_wrap {
+  width: 840px;
+  max-width: 70%;
+  margin-left: auto;
+  padding: 120px 0 60px;
+}
+
+.message-text_wrap {
+  background-color: #F0F0F0;
+  min-width: 345px;
+  padding: 150px 30px 0;
+  /* margin: 0 auto; */
+}
+
+.message-texts {
+  padding: 0 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .message-text_wrap .message-text {
+    max-width: 400px;
+  }
+}
+
+.vision-content {
+  width: 840px;
+  max-width: 70%;
+  margin-left: auto;
+  padding: 120px 0 60px;
+  position: relative;
+}
+
+.vision-content-inner {
+  background-color: #F0F0F0;
+  max-width: 400px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+  padding-top: 150px;
+}
+
+/* // ceo message */
+/* company */
+.description-list_wrap {
+  margin-top: 30px;
+  border-top: 1px solid #DDDDDD;
+  padding: 0 4vw 40px;
+}
+
+.description-list_wrap .grid {
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.description-list_wrap .term {
+  flex-basis: 142px;
+  font-weight: bold;
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 32.7%;
+  /* 横幅に対する高さの割合 */
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* // company */
+/* footer */
+.footer {
+  background-color: #525252;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-top: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    margin-top: 120px;
+  }
+}
+
+/* // footer */

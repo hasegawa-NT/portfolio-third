@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+/* first-view */
+.contact-first-view {
+  height: 60vh;
+  min-height: 450px;
+}
+
+.contact-first-view::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  width: 50%;
+  height: 60vh;
+  min-width: 450px;
+  z-index: -1;
+}
+
+/* レイヤードがうまく行かない */
+.contact-key-visual {
+  height: 86%;
+  width: 76.4%;
+  background-image: url(../IMG/contact/heading-img_contact.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.contact-page_title {
+  font-size: 5.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .contact-page_title {
+    font-size: 7.2rem;
+  }
+}
+
+.contact-page-japanese {
+  font-size: 1.6rem;
+  display: block;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .contact-page-japanese {
+    font-size: 2rem;
+  }
+}
+
+/* // first-view */
+/* contact */
+.form-wrap {
+  margin: 55px auto 0;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .form-wrap {
+    max-width: 668px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-wrap {
+    max-width: 700px;
+  }
+}
+
+.form-lead {
+  margin: 120px auto 0;
+}
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .form-lead {
+    max-width: 668px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-lead {
+    max-width: 700px;
+  }
+}
+
+.form-heading,
+.privacy-policy {
+  font-weight: bold;
+}
+
+.required::after {
+  content: "必須";
+  font-size: 1.2rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  background-color: #000000;
+  color: #fff;
+  padding: 3px 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .radio-wrap {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.radio-item {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .radio-item {
+    margin-right: 50px;
+  }
+}
+
+.form-radio {
+  /* radioボタンの設定 */
+  width: 20px;
+  height: 20px;
+  border: solid 1px #333333;
+  border-radius: 50%;
+  vertical-align: -4px;
+}
+
+.form-radio:checked {
+  background-color: #333333;
+  /* radioボタンの中心 */
+  border: 4px solid #fff;
+  /* 内側の白いところを4px */
+  box-shadow: 0 0 0 1px #333;
+  /* 外周 */
+}
+
+.form-radio:hover {
+  cursor: pointer;
+}
+
+.input-wrap .input-item {
+  margin-top: 45px;
+}
+
+.form-input,
+.form-textarea {
+  border: 1px solid #000000;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.privacy-policy_wrap {
+  margin-top: 40px;
+}
+
+.privacy-policy_wrap .privacy-policy_text {
+  border: 1px solid #000000;
+  overflow: scroll;
+  height: 226px;
+  padding: 10px;
+}
+
+.check-wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.check-wrap .form-check {
+  border: 1px solid #333333;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+}
+
+.check-wrap .form-check:checked {
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.submit {
+  background-color: #000000;
+  display: block;
+  color: #ffffff;
+  width: 160px;
+  margin: 40px auto 0;
+}
+
+/* // contact */
