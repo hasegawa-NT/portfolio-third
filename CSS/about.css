@@ -67,9 +67,7 @@
 
 @media screen and (min-width: 768px) {
   .vision-wrap {
-    /* paddingがわからない */
-    padding-left: 13vw;
-    padding-right: 40vw;
+   min-width: 415px;
   }
 }
 
