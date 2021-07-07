@@ -58,6 +58,11 @@
 
 /* // first-view */
 /* contact */
+
+.main-wrap_contact {
+  padding: 0 4vw;
+}
+
 .form-wrap {
   margin: 55px auto 0;
 }
